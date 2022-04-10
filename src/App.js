@@ -34,14 +34,14 @@ class App extends Component {
 
 
   render() {
-  
-    const { good, neutral, bad } = this.state;
 
+    const { good, neutral, bad } = this.state;
+    const keys = Object.keys(this.state);
     return (
       <Wrapper>
       <Section title={"Pease leave feedback"}>
  <FeedbackOptions
-        options={Object.keys(this.state)}
+        options={keys}
         onLeaveFeedback={this.handleIncrement}
       />
       </Section>
@@ -58,11 +58,11 @@ class App extends Component {
               <Notification message={"There is no feedback"}/>
           )}
       </Section>
-       </Wrapper> 
+       </Wrapper>
     )
   }
 }
- 
-   
+
+
 
 export default App;
